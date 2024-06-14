@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { ChoferListComponent } from './Components/componentChofer/chofer-list/chofer-list.component';
+
+import { ReservaFormComponentComponent } from './reserva-form.component/reserva-form.component';
 import { ChoferFormComponent } from './Components/chofer-form/chofer-form.component';
+import { ChoferListComponent } from './Components/componentChofer/chofer-list/chofer-list.component';
 
 export const routes: Routes = [
     {
@@ -15,4 +17,8 @@ export const routes: Routes = [
         path: 'listaChofer/:id', 
         component: ChoferFormComponent 
     },
+    { 
+        path: 'reservas', 
+        component: ReservaFormComponentComponent 
+    }
 ];

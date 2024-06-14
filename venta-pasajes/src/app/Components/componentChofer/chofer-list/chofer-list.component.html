@@ -1,12 +1,18 @@
-<div>
-    <h2>Lista de Choferes</h2>
-    <button (click)="addChofer()">Agregar Chofer</button>
-    <ul>
-      <li *ngFor="let chofer of choferes">
-        {{ chofer.nombreChofer }} - {{ chofer.cedulaChofer }} - {{ chofer.placaVehiculo }} - {{ chofer.numeroVehiculo }}
-        <button (click)="editChofer(chofer.idChofer!)">Editar</button>
-        <button (click)="deleteChofer(chofer.idChofer!)">Eliminar</button>
-      </li>
-    </ul>
+<div class="choferes-container">
+  <h2>Lista de Choferes</h2>
+  <button class="add-button" (click)="addChofer()">Agregar Chofer</button>
+  <div class="chofer-grid">
+    <div class="chofer-card" *ngFor="let chofer of choferes">
+      <div class="chofer-details">
+        <p><strong>Nombre:</strong> {{ chofer.nombreChofer }}</p>
+        <p><strong>Cédula:</strong> {{ chofer.cedulaChofer }}</p>
+        <p><strong>Placa:</strong> {{ chofer.placaVehiculo }}</p>
+        <p><strong>Número:</strong> {{ chofer.numeroVehiculo }}</p>
+      </div>
+      <div class="chofer-actions">
+        <button class="edit-button" (click)="editChofer(chofer.idChofer!)">Editar</button>
+        <button class="delete-button" (click)="deleteChofer(chofer.idChofer!)">Eliminar</button>
+      </div>
+    </div>
   </div>
-  
+</div>

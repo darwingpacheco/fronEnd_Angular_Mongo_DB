@@ -10,28 +10,31 @@ import { Chofer } from '../../Chofer/chofer.model';
   standalone: true,
   imports: [CommonModule, FormsModule, ChoferFormComponent],
   template: `
-    <div>
-      <h2>{{ isEdit ? 'Editar' : 'Agregar' }} Chofer</h2>
-      <form (ngSubmit)="onSubmit()" #choferForm="ngForm">
-        <div>
-          <label for="nombreChofer">Nombre:</label>
-          <input type="text" id="nombreChofer" [(ngModel)]="chofer.nombreChofer" name="nombreChofer" required>
-        </div>
-        <div>
-          <label for="cedulaChofer">Cédula:</label>
-          <input type="text" id="cedulaChofer" [(ngModel)]="chofer.cedulaChofer" name="cedulaChofer" required>
-        </div>
-        <div>
-          <label for="placaVehiculo">Placa del Vehículo:</label>
-          <input type="text" id="placaVehiculo" [(ngModel)]="chofer.placaVehiculo" name="placaVehiculo" required>
-        </div>
-        <div>
-          <label for="numeroVehiculo">Número del Vehículo:</label>
-          <input type="text" id="numeroVehiculo" [(ngModel)]="chofer.numeroVehiculo" name="numeroVehiculo" required>
-        </div>
-        <button type="submit">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
-      </form>
-    </div>
+    <div class="chofer-form-container">
+  <div class="chofer-form-card">
+    <h2>{{ isEdit ? 'Editar' : 'Agregar' }} Chofer</h2>
+    <form (ngSubmit)="onSubmit()" #choferForm="ngForm">
+      <div class="form-group">
+        <label for="nombreChofer">Nombre:</label>
+        <input type="text" id="nombreChofer" [(ngModel)]="chofer.nombreChofer" name="nombreChofer" required>
+      </div>
+      <div class="form-group">
+        <label for="cedulaChofer">Cédula:</label>
+        <input type="text" id="cedulaChofer" [(ngModel)]="chofer.cedulaChofer" name="cedulaChofer" required>
+      </div>
+      <div class="form-group">
+        <label for="placaVehiculo">Placa del Vehículo:</label>
+        <input type="text" id="placaVehiculo" [(ngModel)]="chofer.placaVehiculo" name="placaVehiculo" required>
+      </div>
+      <div class="form-group">
+        <label for="numeroVehiculo">Número del Vehículo:</label>
+        <input type="text" id="numeroVehiculo" [(ngModel)]="chofer.numeroVehiculo" name="numeroVehiculo" required>
+      </div>
+      <button type="submit" class="submit-button">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
+    </form>
+  </div>
+</div>
+
   `,
   styleUrls: ['./chofer-form.component.css']
 })

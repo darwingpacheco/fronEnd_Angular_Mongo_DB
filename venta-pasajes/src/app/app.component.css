@@ -1,19 +1,33 @@
-mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .spacer {
-    flex: 1 1 auto;
-  }
-  
-  .active-link {
-    color: white !important; /* Cambia el color del texto activo */
-    font-weight: bold; /* Puedes añadir negrita al texto activo */
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos del toolbar */
+.toolbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toolbar-button {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toolbar-button:hover {
+  background-color: #555;
+  color: #fff;
+}
