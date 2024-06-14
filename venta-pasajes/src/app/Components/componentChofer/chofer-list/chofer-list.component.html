@@ -1,0 +1,12 @@
+<div>
+    <h2>Lista de Choferes</h2>
+    <button (click)="addChofer()">Agregar Chofer</button>
+    <ul>
+      <li *ngFor="let chofer of choferes">
+        {{ chofer.nombreChofer }} - {{ chofer.cedulaChofer }} - {{ chofer.placaVehiculo }} - {{ chofer.numeroVehiculo }}
+        <button (click)="editChofer(chofer.idChofer!)">Editar</button>
+        <button (click)="deleteChofer(chofer.idChofer!)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+  
