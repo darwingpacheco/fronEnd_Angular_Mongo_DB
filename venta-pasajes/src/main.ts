@@ -10,6 +10,8 @@ import { importProvidersFrom } from '@angular/core';
 import { ChoferListComponent } from './app/Components/componentChofer/chofer-list/chofer-list.component';
 import { ChoferFormComponent } from './app/Components/chofer-form/chofer-form.component';
 import { ReservaFormComponentComponent } from './app/reserva-form.component/reserva-form.component';
+import { RutasFormComponent } from './app/rutas-form/rutas-form.component';
+import { ReservaListComponentComponent } from './app/reserva-list.component/reserva-list.component.component';
 
 
 bootstrapApplication(AppComponent, appConfig)
@@ -20,7 +22,9 @@ bootstrapApplication(AppComponent, appConfig)
     { path: 'listaChofer', component: ChoferFormComponent},
     { path: '', redirectTo: '/chofer', pathMatch: 'full' },
     { path: 'listaChofer/:id', component: ChoferFormComponent},
-    { path: 'reservas', component: ReservaFormComponentComponent}
+    { path: 'reservas', component: ReservaFormComponentComponent},
+    { path: 'precios', component: RutasFormComponent},
+    { path: 'listaReservas', component: ReservaListComponentComponent}
   ];
 
   bootstrapApplication(AppComponent, {

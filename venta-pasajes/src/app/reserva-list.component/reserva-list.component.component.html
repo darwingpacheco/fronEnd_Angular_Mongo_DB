@@ -1,0 +1,20 @@
+<div class="reservas-container">
+    <h2>Reservas Realizadas</h2>
+    <div *ngIf="reservas.length === 0" class="empty-reservas">
+      No hay reservas disponibles.
+    </div>
+    <div *ngFor="let reserva of reservas" class="reserva-item">
+      <div class="reserva-info">
+        <p><strong>Nombre:</strong> {{ reserva.nombrePasajero }} {{ reserva.apellidoPasajero }}</p>
+        <p><strong>Documento:</strong> {{ reserva.documentoPasajero }}</p>
+        <p><strong>Teléfono:</strong> {{ reserva.telefonoPasajero }}</p>
+        <p><strong>Dirección:</strong> {{ reserva.direccionPasajero }}</p>
+        <p><strong>Ciudad Origen:</strong> {{ reserva.ciudadOrigen }}</p>
+        <p><strong>Ciudad Destino:</strong> {{ reserva.ciudadDestino }}</p>
+      </div>
+      <div class="reserva-actions">
+        <!-- Aquí podrías añadir botones de acción como editar, eliminar, etc., según tus necesidades -->
+      </div>
+    </div>
+  </div>
+  

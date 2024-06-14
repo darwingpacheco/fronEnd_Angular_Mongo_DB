@@ -1,0 +1,55 @@
+<div class="rutas-container">
+    <div class="rutas-list">
+      <h2>Rutas Disponibles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ciudad de Origen</th>
+            <th>Ciudad de Destino</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ruta of rutas">
+            <td>{{ ruta.ciudadOrigen }}</td>
+            <td>{{ ruta.ciudadDestino }}</td>
+            <td>{{ ruta.precio | currency }}</td>
+            <td>
+              <button (click)="updatePrecios(ruta)">Editar</button>
+              <button (click)="deleteRuta(ruta.id!)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="add-ruta-form">
+      <h2>Agregar Nueva Ruta</h2>
+      <form (ngSubmit)="onSubmit()" #rutaForm="ngForm">
+        <div class="form-group">
+          <label for="ciudadOrigen">Ciudad de Origen</label>
+          <input type="text" id="ciudadOrigen" required [(ngModel)]="newRuta.ciudadOrigen" name="ciudadOrigen" #ciudadOrigen="ngModel">
+          <div *ngIf="ciudadOrigen.invalid && (ciudadOrigen.dirty || ciudadOrigen.touched)" class="error">
+            Ciudad de Origen es requerida.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ciudadDestino">Ciudad de Destino</label>
+          <input type="text" id="ciudadDestino" required [(ngModel)]="newRuta.ciudadDestino" name="ciudadDestino" #ciudadDestino="ngModel">
+          <div *ngIf="ciudadDestino.invalid && (ciudadDestino.dirty || ciudadDestino.touched)" class="error">
+            Ciudad de Destino es requerida.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input type="number" id="precio" required [(ngModel)]="newRuta.precio" name="precio" #precio="ngModel">
+          <div *ngIf="precio.invalid && (precio.dirty || precio.touched)" class="error">
+            Precio es requerido.
+          </div>
+        </div>
+        <button type="submit" [disabled]="rutaForm.invalid">Agregar Ruta</button>
+      </form>
+    </div>
+  </div>
+  

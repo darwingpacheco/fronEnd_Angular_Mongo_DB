@@ -1,79 +1,81 @@
 /* Estilos generales */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  /* Contenedor principal */
-  .reserva-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Estilo de la tarjeta del formulario */
-  .reserva-form-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 100%;
-    text-align: center;
-  }
-  
-  /* Estilo del título */
-  .reserva-form-card h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos de los grupos de formulario */
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  /* Estilos de las etiquetas */
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  /* Estilos de los inputs y selects */
-  .form-group input,
-  .form-group select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  /* Estilo del botón de envío */
-  .submit-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 1em;
-  }
-  
-  .submit-button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Estilo de los mensajes de error */
-  .error {
-    color: red;
-    font-size: 0.875em;
-    margin-top: 5px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.reserva-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Estilo de la tarjeta del formulario */
+.reserva-form-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ajustado para que ocupe todo el ancho disponible */
+  max-width: 600px; /* Limitado el ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+  text-align: left; /* Alineación del texto a la izquierda */
+  margin: auto; /* Centrado horizontal del formulario */
+}
+
+/* Estilo del título */
+.reserva-form-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center; /* Centrado del título */
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+  margin-bottom: 20px; /* Aumentado el margen inferior para separar más los grupos */
+}
+
+/* Estilos de las etiquetas */
+.form-group label {
+  display: inline-block; /* Cambiado a inline-block para alinear los labels */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos de los inputs y selects */
+.form-group input,
+.form-group select {
+  width: calc(100% - 20px); /* Reducido el ancho para dejar espacio al borde */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilo del botón de envío */
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1em;
+  margin-top: 20px; /* Añadido margen superior para separar el botón del último campo */
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo de los mensajes de error */
+.error {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
