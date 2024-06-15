@@ -1,7 +1,10 @@
 <div class="reserva-form-container">
-    <div class="reserva-form-card">
-      <h2>{{ isEdit ? 'Editar' : 'Agregar' }} Reserva</h2>
-      <form (ngSubmit)="onSubmit()" #reservaForm="ngForm" novalidate>
+  <h2>{{ isEdit ? 'Editar' : 'Agregar' }} Reserva</h2>
+  <form (ngSubmit)="onSubmit()" #reservaForm="ngForm" novalidate>
+    <div class="grid-container">
+      <!-- Card 1: Información del Pasajero -->
+      <div class="card passenger-info">
+        <h3>Información del Pasajero</h3>
         <div class="form-group">
           <label for="nombrePasajero">Nombre del Pasajero:</label>
           <input type="text" id="nombrePasajero" [(ngModel)]="reserva.nombrePasajero" name="nombrePasajero" required>
@@ -14,12 +17,12 @@
         </div>
         <div class="form-group">
           <label for="documentoPasajero">Documento del Pasajero:</label>
-          <input type="text" id="documentoPasajero" [(ngModel)]="reserva.documentoPasajero" name="documentoPasajero" required>
+          <input type="number" id="documentoPasajero" [(ngModel)]="reserva.documentoPasajero" name="documentoPasajero" required>
           <div *ngIf="!reserva.documentoPasajero && formSubmitted" class="error">Este campo es obligatorio</div>
         </div>
         <div class="form-group">
           <label for="telefonoPasajero">Teléfono del Pasajero:</label>
-          <input type="text" id="telefonoPasajero" [(ngModel)]="reserva.telefonoPasajero" name="telefonoPasajero" required>
+          <input type="number" id="telefonoPasajero" [(ngModel)]="reserva.telefonoPasajero" name="telefonoPasajero" required>
           <div *ngIf="!reserva.telefonoPasajero && formSubmitted" class="error">Este campo es obligatorio</div>
         </div>
         <div class="form-group">
@@ -27,6 +30,10 @@
           <input type="text" id="direccionPasajero" [(ngModel)]="reserva.direccionPasajero" name="direccionPasajero" required>
           <div *ngIf="!reserva.direccionPasajero && formSubmitted" class="error">Este campo es obligatorio</div>
         </div>
+      </div>
+
+      <div class="card trip-info">
+        <h3>Información del Viaje</h3>
         <div class="form-group">
           <label for="ciudadOrigen">Ciudad de Origen:</label>
           <select id="ciudadOrigen" [(ngModel)]="reserva.ciudadOrigen" name="ciudadOrigen" required (change)="onOrigenChange()">
@@ -43,8 +50,17 @@
           </select>
           <div *ngIf="!reserva.ciudadDestino && formSubmitted" class="error">Este campo es obligatorio</div>
         </div>
-        <button type="submit" class="submit-button">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
-      </form>
+        <div class="form-group">
+          <label for="cantidadPuestos">Cantidad de Puestos:</label>
+          <input type="number" id="cantidadPuestos" [(ngModel)]="reserva.cantidadPuestos" name="cantidadPuestos" required min="1" max="9">
+          <div *ngIf="!reserva.cantidadPuestos && formSubmitted" class="error">Este campo es obligatorio</div>
+        </div>
+        <button type="button" class="submit-button" (click)="realizarOperacion()">Realizar Operación</button><br>
+        <h3 *ngIf="factura.precioTotal !== undefined">Valor unitario: {{ factura.precioUnitario }}</h3>
+        <h3 *ngIf="factura.precioTotal !== undefined">Valor Total: {{ factura.precioTotal }}</h3>
+      </div>
+      
     </div>
-  </div>
-  
+    <button type="submit" class="submit-button">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
+  </form>
+</div>

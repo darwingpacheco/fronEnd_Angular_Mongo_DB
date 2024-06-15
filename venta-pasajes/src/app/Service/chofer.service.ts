@@ -13,6 +13,7 @@ export class ChoferService {
   private apiUrl = 'http://localhost:8080/api/chofer';
   private apiUrlReserva = 'http://localhost:8080/api/reservas';
   private apiUrlPrecios = 'http://localhost:8080/api/precios';
+  
 
   constructor(private http: HttpClient) {}
 
@@ -78,6 +79,15 @@ export class ChoferService {
 
   deletePrecios(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrlPrecios}/${id}`);
+  }
+
+  getPrecioByRuta(ciudadOrigen: string, ciudadDestino: string): Observable<Precio> {
+    return this.http.get<Precio>(`${this.apiUrlPrecios}/precioRuta`, {
+      params: {
+        ciudadOrigen: ciudadOrigen,
+        ciudadDestino: ciudadDestino
+      }
+    });
   }
 
 }

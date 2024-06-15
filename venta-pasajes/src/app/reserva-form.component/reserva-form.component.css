@@ -1,81 +1,97 @@
-/* Estilos generales */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
-/* Contenedor principal */
 .reserva-form-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 80vh;
   padding: 20px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
 }
 
-/* Estilo de la tarjeta del formulario */
-.reserva-form-card {
-  background-color: white;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ajustado para que ocupe todo el ancho disponible */
-  max-width: 600px; /* Limitado el ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
-  text-align: left; /* Alineación del texto a la izquierda */
-  margin: auto; /* Centrado horizontal del formulario */
+  transition: transform 0.3s ease;
 }
 
-/* Estilo del título */
-.reserva-form-card h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  text-align: center; /* Centrado del título */
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Estilos de los grupos de formulario */
+.passenger-info {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.trip-info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.ticket-info {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
 .form-group {
-  margin-bottom: 20px; /* Aumentado el margen inferior para separar más los grupos */
+  margin-bottom: 15px;
 }
 
-/* Estilos de las etiquetas */
-.form-group label {
-  display: inline-block; /* Cambiado a inline-block para alinear los labels */
+label {
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-/* Estilos de los inputs y selects */
-.form-group input,
-.form-group select {
-  width: calc(100% - 20px); /* Reducido el ancho para dejar espacio al borde */
+input,
+select {
+  width: 100%;
   padding: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-/* Estilo del botón de envío */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 .submit-button {
-  background-color: #4CAF50;
+  background-color: #007bff;
   color: white;
+  padding: 15px 30px;
   border: none;
-  padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-  font-size: 1em;
-  margin-top: 20px; /* Añadido margen superior para separar el botón del último campo */
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #45a049;
-}
-
-/* Estilo de los mensajes de error */
-.error {
-  color: red;
-  font-size: 0.875em;
-  margin-top: 5px;
+  background-color: #0056b3;
 }

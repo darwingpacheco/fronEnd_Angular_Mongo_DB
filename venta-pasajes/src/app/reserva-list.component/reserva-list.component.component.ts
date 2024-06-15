@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Reserva } from '../Chofer/reserva.model';
 import { ChoferService } from '../Service/chofer.service';
 import { Router } from '@angular/router';
+import { Precio } from '../Chofer/precio.model';
 
 @Component({
   selector: 'app-reserva-list.component',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class ReservaListComponentComponent {
   reservas: Reserva[] = [];
+  precio: Precio[] = [];
 
   constructor(private reservaService: ChoferService, private router: Router) {}
 

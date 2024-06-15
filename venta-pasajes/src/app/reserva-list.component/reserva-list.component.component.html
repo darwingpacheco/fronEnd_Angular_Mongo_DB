@@ -11,6 +11,8 @@
         <p><strong>Dirección:</strong> {{ reserva.direccionPasajero }}</p>
         <p><strong>Ciudad Origen:</strong> {{ reserva.ciudadOrigen }}</p>
         <p><strong>Ciudad Destino:</strong> {{ reserva.ciudadDestino }}</p>
+        <p><strong>Cantidad de puestos:</strong> {{ reserva.cantidadPuestos }}</p>
+        <p><strong>Precio total:</strong> {{ reserva.precio * reserva.cantidadPuestos }}</p>
       </div>
       <div class="reserva-actions">
         <!-- Aquí podrías añadir botones de acción como editar, eliminar, etc., según tus necesidades -->

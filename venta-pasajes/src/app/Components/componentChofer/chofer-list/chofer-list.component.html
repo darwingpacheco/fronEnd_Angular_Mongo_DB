@@ -1,6 +1,9 @@
 <div class="choferes-container">
   <h2>Lista de Choferes</h2>
   <button class="add-button" (click)="addChofer()">Agregar Chofer</button>
+  <div *ngIf="choferes.length === 0" class="empty-reservas">
+    No hay choferes disponibles.
+  </div>
   <div class="chofer-grid">
     <div class="chofer-card" *ngFor="let chofer of choferes">
       <div class="chofer-details">

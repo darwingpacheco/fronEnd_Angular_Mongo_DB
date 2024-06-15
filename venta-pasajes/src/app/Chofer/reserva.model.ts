@@ -7,4 +7,6 @@ export class Reserva {
     direccionPasajero!: string;
     ciudadOrigen!: string;
     ciudadDestino!: string;
+    cantidadPuestos!: number;
+    precio!: number;
   }
